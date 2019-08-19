@@ -1,0 +1,33 @@
+{
+    "name": "remyli/fizzbuzz-swing",
+    "description": "FizzBuzz",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "remyli",
+            "email": "rapi.remyli@gmail.com"
+        }
+    ],
+    "scripts": {
+        "fix": [
+            "php-cs-fixer fix src tests --verbose --ansi"
+        ],
+        "stan": [
+            "phpstan analyze -c ./phpstan.neon --ansi"
+        ],
+        "test": [
+            "phpunit -c phpunit.xml --colors=always"
+        ],
+        "ci": [
+            "@fix",
+            "@stan",
+            "@test"
+        ]
+    },
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^8.3",
+        "phpstan/phpstan": "^0.11.15",
+        "friendsofphp/php-cs-fixer": "^2.15"
+    }
+}
