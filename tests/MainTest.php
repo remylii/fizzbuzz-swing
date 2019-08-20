@@ -1,4 +1,6 @@
 <?php
+namespace Tests;
+
 use PHPUnit\Framework\TestCase;
 
 class MainTest extends TestCase

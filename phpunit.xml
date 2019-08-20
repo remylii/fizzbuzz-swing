@@ -1,7 +1,19 @@
-<phpunit bootstrap="vendor/autoload.php">
+<phpunit bootstrap="./vendor/autoload.php"
+    stopOnFailure="true"
+    colors="true"
+>
   <testsuites>
-    <testsuite name="Sample">
-      <directory>tests</directory>
-    </testsuite>
+      <testsuite name="Test Suite">
+          <directory>./tests</directory>
+      </testsuite>
   </testsuites>
+  <filter>
+      <whitelist>
+          <directory suffix=".php">./src</directory>
+          <exclude></exclude>
+      </whitelist>
+  </filter>
+  <logging>
+      <log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
+  </logging>
 </phpunit>
