@@ -2,6 +2,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
+use FizzBuzzSwing\Main;
 
 class MainTest extends TestCase
 {
@@ -9,7 +10,8 @@ class MainTest extends TestCase
     {
         ob_start();
 
-        require_once(__DIR__ . '/../src/main.php');
+        $m = new Main();
+        $m->fizzbuzz();
 
         $output_contents = ob_get_clean();
 

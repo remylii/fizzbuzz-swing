@@ -25,6 +25,3 @@ class Main
         }
     }
 }
-
-$m = new Main();
-$m->fizzbuzz();
