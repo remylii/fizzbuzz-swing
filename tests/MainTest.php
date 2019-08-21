@@ -11,7 +11,7 @@ class MainTest extends TestCase
         ob_start();
 
         $m = new Main();
-        $m->fizzbuzz();
+        $m->boot();
 
         $output_contents = ob_get_clean();
 

@@ -3,7 +3,7 @@ namespace FizzBuzzSwing;
 
 class Main
 {
-    public function fizzbuzz()
+    public function boot()
     {
         for ($i = 1; $i <= 15; $i++) {
             $result = '';
