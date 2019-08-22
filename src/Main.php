@@ -6,7 +6,9 @@ class Main
     public function boot()
     {
         for ($i = 1; $i <= 15; $i++) {
-            echo $this->fizzbuzz($i);
+            $content = $this->fizzbuzz($i);
+
+            $this->output($content);
         }
     }
 
@@ -26,5 +28,10 @@ class Main
         }
 
         return $res;
+    }
+
+    public function output($content)
+    {
+        echo $content;
     }
 }
