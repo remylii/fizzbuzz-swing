@@ -2,6 +2,7 @@
 namespace FizzBuzzSwing;
 
 use FizzBuzzSwing\Libs\FizzBuzzInterface;
+use FizzBuzzSwing\Response;
 
 class Main implements FizzBuzzInterface
 {
@@ -11,13 +12,9 @@ class Main implements FizzBuzzInterface
     {
         for ($i = 1; $i <= 15; $i++) {
             $content = $this->fizzbuzz($i);
+            Response::output($content);
 
-            $this->output($content);
+            unset($content);
         }
-    }
-
-    public function output($content)
-    {
-        echo $content;
     }
 }

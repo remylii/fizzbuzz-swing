@@ -17,31 +17,4 @@ class MainTest extends TestCase
 
         $this->assertEquals("12Fizz4BuzzFizz78FizzBuzz11Fizz1314FizzBuzz", $output_contents);
     }
-
-    /**
-     *
-     * @dataProvider outputProvider
-     */
-    public function testOutput($expected, $params)
-    {
-        ob_start();
-
-        $m = new Main();
-        foreach ($params as $val) {
-            $m->output($val);
-        }
-
-        $output_contents = ob_get_clean();
-
-        $this->assertEquals($expected, $output_contents);
-    }
-
-    public function outputProvider(): array
-    {
-        return [
-            ['Fizz', ['Fizz']],
-            ['12Fizz4Buzz', [1, 2, 'Fizz', 4, 'Buzz']],
-            ['12345', [1, 2, 3, 4, 5]],
-        ];
-    }
 }
