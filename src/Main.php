@@ -1,8 +1,12 @@
 <?php
 namespace FizzBuzzSwing;
 
-class Main
+use FizzBuzzSwing\Libs\FizzBuzzInterface;
+
+class Main implements FizzBuzzInterface
 {
+    use Libs\FizzBuzzTrait;
+
     public function boot()
     {
         for ($i = 1; $i <= 15; $i++) {
@@ -10,24 +14,6 @@ class Main
 
             $this->output($content);
         }
-    }
-
-    public function fizzbuzz($n)
-    {
-        $res = '';
-        if ($n%3 === 0) {
-            $res .= 'Fizz';
-        }
-
-        if ($n%5 === 0) {
-            $res .= 'Buzz';
-        }
-
-        if ($res === '') {
-            $res = $n;
-        }
-
-        return $res;
     }
 
     public function output($content)

@@ -33,7 +33,8 @@
     },
     "autoload": {
         "psr-4": {
-            "FizzBuzzSwing\\": "src/"
+            "FizzBuzzSwing\\": "src/",
+            "FizzBuzzSwing\\Libs\\": "src/libs"
         }
     },
     "autoload-dev": {
