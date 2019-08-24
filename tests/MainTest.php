@@ -20,8 +20,8 @@ class MainTest extends TestCase
 
     public function testConstructorException()
     {
-        $this->expectException(\ArgumentCountError::class);
+        $this->expectException(\InvalidArgumentException::class);
 
-        $m = new Main();
+        $m = new Main(-1);
     }
 }
