@@ -2,5 +2,16 @@
 <?php
 require_once(__DIR__ . '/../vendor/autoload.php');
 
-$app = new \FizzBuzzSwing\Main();
+if (!isset($argv[1])) {
+    echo "引数に自然数を入力してください\n";
+    exit(0);
+}
+
+$n = (int)$argv[1];
+if ($n <= 0) {
+    echo "引数に自然数を入力してください\n";
+    exit(0);
+}
+
+$app = new \FizzBuzzSwing\Main($n);
 $app->boot();

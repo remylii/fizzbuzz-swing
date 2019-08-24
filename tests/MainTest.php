@@ -10,11 +10,18 @@ class MainTest extends TestCase
     {
         ob_start();
 
-        $m = new Main();
+        $m = new Main(15);
         $m->boot();
 
         $output_contents = ob_get_clean();
 
         $this->assertEquals("12Fizz4BuzzFizz78FizzBuzz11Fizz1314FizzBuzz", $output_contents);
+    }
+
+    public function testConstructorException()
+    {
+        $this->expectException(\ArgumentCountError::class);
+
+        $m = new Main();
     }
 }
